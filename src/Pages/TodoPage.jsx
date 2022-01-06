@@ -1,5 +1,3 @@
-import {useEffect, useState} from 'react';
-import {getAll} from '../api';
 import InputComponent from '../Components/InputComponent';
 import TableComponent from '../Components/TableComponent';
 import Header from '../Components/Header';
@@ -10,24 +8,6 @@ const TodoPage=()=> {
 
     const classes=TodoStyle();
 
-    const [isLoading, setLoading]=useState(false)
-    const [error, setError]=useState("");
-    const [data,setData]=useState([]);
-
-    useEffect(()=>{
-        setLoading(true);
-        getAll().then((resutl)=>{
-            setLoading(false);
-            setData(resutl.data);
-        }).catch((error)=>{
-            setLoading(false);
-            setError(error.message)
-        })
-    },[])
-
-    if(isLoading) return <h1>Loading</h1>
-    if(error) return <h1>{error}</h1>
-
     return (
         <div>
             <Header />
@@ -37,7 +17,7 @@ const TodoPage=()=> {
                 </div>
                 <div>
                     <TableComponent
-                        data={data}
+                        data={[]}
                         onDelete={()=>{}}
                     />
                 </div>
