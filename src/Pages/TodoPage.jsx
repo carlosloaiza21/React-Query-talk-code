@@ -5,6 +5,7 @@ import TableComponent from '../Components/TableComponent';
 import Header from '../Components/Header';
 import {makeStyles} from '@mui/styles';
 
+//Esta pagina unicamente es para mostrar como se realizan las peticiones sin RQ y hacer una comparacion entre ambas
 
 const TodoPage=()=> {
 

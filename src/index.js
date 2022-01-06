@@ -9,6 +9,23 @@ import TodoRQPage from './Pages/TodoRQPage';
 import {QueryClientProvider, QueryClient} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 
+/*
+
+    La app esta envuelta en React-router para poder mostrar los cambios de pantalla y asi
+    probar funcionalidades como refetchOnMount y el potencial del Cache
+
+    QueryClientProvider es el componente que envuelve nuestra app en React-Query, este componente
+    necesita una prop llamada cliente que es el cliente que nos permite interactuar con todo el
+    ecosistema de React-Query por lo cual se crea una instancia (new QueryClient() ) y se pasa como prop
+
+    const client=new QueryClient();
+    <QueryClientProvider client={client}></QueryClientProvider>
+
+    <ReactQueryDevtools /> es un componente que nos permite tener la herramienta para inspeccionar
+    las peticiones y realizar seguimiento del cache de RQ
+
+*/
+
 const client=new QueryClient();
 
 ReactDOM.render(
